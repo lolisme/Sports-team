@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "98377521336",
+    "firebase_url": "https://teams-app.firebaseio.com",
+    "project_id": "teams-app",
+    "storage_bucket": "teams-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98377521336:android:4cdd5e34168f0a68",
+        "android_client_info": {
+          "package_name": "com.example.waracci.teams"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98377521336-j1aq1mt1if9bcuekrsrmve1trtf187s8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.waracci.teams",
+            "certificate_hash": "e70a44301edd76b0df68f0f09fb13ee53cf242e3"
+          }
+        },
+        {
+          "client_id": "98377521336-r1s3h76rlhf0djr8t3egl3rfa9ifin9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5a80QncQHIx-SF5Exm9Dv5fEqNqP8DKE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98377521336-r1s3h76rlhf0djr8t3egl3rfa9ifin9k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
