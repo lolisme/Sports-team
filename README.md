@@ -24,7 +24,7 @@ The app does the following:
 4. Use SearchView to search for Teams.
 5. Show ProgressBar during the user Authentication activities.
 6. Add a detail view to display more information about the selected player from the results list
-7. Use a share intent to share information with friends
+7. Includes touch gestures such as swipe and drag.
 
 
 ## Libraries
