@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.signinUserEmailId)
     EditText mSignInEmail;
     @Bind(R.id.signinPassword) EditText mSignInPassword;
-    @Bind(R.id.signInBtn)
+    @Bind(R.id.xUserSignInButton)
     Button mSignInButton;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         };
 
         mRegisterTextView.setOnClickListener(this);
-        mSignInPassword.setOnClickListener(this);
+        mSignInButton.setOnClickListener(this);
         createAuthProgressDialog();
     }
 
@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             finish();
         }
         if (view == mSignInButton) {
+            Toast.makeText(LoginActivity.this, "sign in", Toast.LENGTH_SHORT).show();
             loginWithPassword();
         }
     }
