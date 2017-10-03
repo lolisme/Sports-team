@@ -10,6 +10,8 @@ import com.example.waracci.teams.R;
 import com.example.waracci.teams.adapters.FirebaseTeamViewHolder;
 import com.example.waracci.teams.models.Player;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -32,13 +34,17 @@ public class SavedPlayersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_players);
         ButterKnife.bind(this);
 
-        mTeamsReference = FirebaseDatabase
-                .getInstance()
-                .getReference(Constants.FIREBASE_CHILD_SPORT_TEAMS);
+
         setUpFirebaseAdapter();
     }
 
     private void setUpFirebaseAdapter() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        mTeamsReference = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_SPORT_TEAMS)
+                .child(uid);
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Player, FirebaseTeamViewHolder>
                 (Player.class, R.layout.player_list_item, FirebaseTeamViewHolder.class, mTeamsReference) {
             @Override

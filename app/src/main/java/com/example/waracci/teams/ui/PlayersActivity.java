@@ -40,7 +40,7 @@ public class PlayersActivity extends AppCompatActivity  {
     private SharedPreferences.Editor mEditor;
     private String mRecentTeam;
 
-//    @Bind(R.id.playersListView) ListView mPlayersListView;
+   @Bind(R.id.playersListView) ListView mPlayersListView;
     @Bind(R.id.teamDisplay) TextView mTeamDsiplay;
     @Bind(R.id.recyclerView)
 
@@ -60,7 +60,7 @@ public class PlayersActivity extends AppCompatActivity  {
         Intent intent = getIntent();
         String team = intent.getStringExtra("team");
         mTeamDsiplay.setText("Team search for: " + team);
-        //getPlayers(team);
+        getPlayers(team);
 
         //test for shared preferences
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -72,7 +72,7 @@ public class PlayersActivity extends AppCompatActivity  {
         }
 
         //log the recent team saved, to LogCat
-        Log.d("Shared pref location", mRecentTeam);
+       // Log.d("Shared pref location", mRecentTeam);
     }
 
     @Override
