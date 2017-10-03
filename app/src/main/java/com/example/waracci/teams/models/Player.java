@@ -21,6 +21,7 @@ public class Player {
     private String imageUrl;
     private String team;
     private String description;
+    private String pushId;
 
     public Player() {}
 
@@ -78,6 +79,12 @@ public class Player {
     }
     public String getDescription (){
         return description ;
+    }
+    public String getPushId() {
+        return pushId;
+    }
+    public void setPushId( String pushId) {
+        this.pushId = pushId;
     }
 }
 
