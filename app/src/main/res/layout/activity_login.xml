@@ -78,7 +78,7 @@
         android:background="@color/white_greyish" />
 
     <Button
-        android:id="@+id/signInBtn"
+        android:id="@+id/xUserSignInButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
