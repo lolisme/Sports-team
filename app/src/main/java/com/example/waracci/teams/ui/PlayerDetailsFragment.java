@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.example.waracci.teams.Constants;
 import com.example.waracci.teams.R;
 import com.example.waracci.teams.models.Player;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -95,10 +97,17 @@ public class PlayerDetailsFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == mSavePlayerx) {
-            DatabaseReference teamsRef = FirebaseDatabase
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference playerRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_SPORT_TEAMS);
-            teamsRef.push().setValue(mPlayer);
+                    .getReference(Constants.FIREBASE_CHILD_SPORT_TEAMS)
+                    .child(uid);
+            DatabaseReference pushRef = playerRef.push();
+            String pushId = pushRef.getKey();
+            mPlayer.setPushId(pushId);
+            pushRef.setValue(mPlayer);
+
             Toast.makeText(getContext(), "Successfully saved to firebase", Toast.LENGTH_SHORT).show();
         }
     }
